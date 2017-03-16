@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "num_caracs.h"
+
+	int main () {
+
+	char nome [100];
+	gets(nome);
+	printf("Argumento: %s / %d \n", nome , numCaractere(nome));
+
+	
+
+return 0;
+}
