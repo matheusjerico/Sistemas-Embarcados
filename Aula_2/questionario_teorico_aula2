@@ -1,0 +1,78 @@
+Matheus Jericó Palhares
+
+##
+0. Compilar arquivo.c pelo terminal:
+	gcc -c "nome_arquivo".c
+	gcc -o "nome_arquivo" "nome_arquivo".o
+	./"nome_arquivo"
+
+1. Por que o Linux recebeu esse nome?
+	Por causa do Unix, o Linux é a versão livre do Unix.
+2. O que são daemons?
+	É umprograma que roda em background e não é controlado por usuários comuns. 
+3. O que é o shell?
+	Shell é o terminal de comandos.
+4. Por que é importante evitar executar o terminal como super-usuário?
+	Porque quando o terminal é acessado como super usuário, a pessoa tem acesso a todas as pastas do sistema,
+	incluindo as pastas /bin, /lib, /etc, e sem o devido conhecimento pode-se causar prejuízos ao sistema.
+5. Qual botão do teclado completa o que o usuário escreve no terminal, de acordo com o contexto?
+	TAB.
+6. Quais botões do teclado apresentam instruções escritas anteriormente?
+	Setinha para cima.
+7. Apresente os respectivos comandos no terminal para:
+  (a) Obter mais informações sobre um comando.
+	man
+  (b) Apresentar uma lista com os arquivos dentro de uma pasta.
+	ls
+  (c) Apresentar o caminho completo da pasta.
+	sudo locate nome_arquivo_procurado
+  (d) Trocar de pasta.
+	cd
+  (e) Criar uma pasta.
+	mkdir
+  (f) Apagar arquivos definitivamente.
+	rm nome_arquivo
+  (g) Apagar pastas definitivamente.
+	rm -r nome_pasta
+  (h) Copiar arquivos.
+	cp arquivo_existente arquivo_novo
+  (i) Copiar pastas.
+	cp -r pasta_existente pasta_nova
+  (j) Mover arquivos.
+	mv "arquivo" "prox_pasta"
+  (k) Mover pastas.
+	mv "pasta"/ "nova_pasta"/
+  (l) Renomear pastas.
+	mv "nome_arquivo.txt" "novo_nome.txt"
+  (m) Apresentar o conteúdo de um arquivo.
+	cat "nome_arquivo"
+  (n) Apresentar o tipo de um arquivo.
+	file "nome_arquivo"
+  (o) Limpar a tela do terminal.
+	clear
+  (p) Encontrar ocorrências de palavras-chave em um arquivo-texto.
+	cat "nome_arquivo" | grep "palavra_chave"
+  (q) Ordenar informações em um arquivo-texto.
+	sort [opções] [arquivo]
+  (r) Substituir ocorrências de palavras-chave em um arquivo-texto.
+	sed -e 's/"novo_nome"/"nome_substituido"/g' "nome_Arquivo"
+	PADRÃO: s-> substituir, g-> em todas as ocorrências.
+
+  (s) Conferir se dois arquivos são iguais.
+	diff [opções] "nome_arquivo" "nome_arquivo"
+	
+-i :: ignora as diferenças de letras maiúsculas/minúsculas.
+-E :: ignora as diferenças de tabulação.
+-b :: ignora diferenças na quantidade de espaço em branco.
+-w :: ignora qualquer espaço em branco.
+-B :: ignora linhas em branco a mais ou a menos.
+-a :: compara os arquivos como arquivos de texto, ainda que não sejam.
+-u [n] :: mostra [n] linhas do conteúdo final do arquivo1, adicionadas as diferenças do arquivo2.
+-q :: mostra apenas se o conteúdo dos arquivos são ou não diferentes.
+-y :: mostra os arquivos em duas colunas, indicando as diferenças.
+-t :: expande as tabulações, convertendo-as em espaços, na saída.
+-r :: compara recursivamente todo o conteúdo de um diretório.
+-S [arquivo] :: quando comparar diretórios, inicia a comparação pelo arquivo especificado.
+
+  (t) Escrever algo na tela.
+	echo
