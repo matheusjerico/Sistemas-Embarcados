@@ -1,0 +1,52 @@
+#Sistemas Embarcados# 21/03/2017
+#include <stdio.h>
+
+*Abertura, leitura, escrita e gravação em arquivos.
+
+-Declaração de Arquivos:
+	FILE *ponteiro_para_arquivo;
+
+-Função para abrir arquivos:
+	FILE *fopen (char *nome_do_arquivo, char *modo);
+
+-Função para fechar aquivos:
+	int fclose ( FILE *ponteiro_para_arquivo);
+
+ 
+EXEMPLO:
+.
+.
+.
+	FILE *fp;
+	fp = fopen ("Ola.txt","r"); //r de escrita.
+	.
+	.
+	.
+	fclose(fp);
+
+endEXEMPLO.
+
+MODOS: "r","w","a".
+
+- putc(string[i], fp) ; // coloca cada caractere de string no arquivo.
+
+- while(( c = getc (fp)) != EOF) // faz a leitura do arquivo e coloca cada caractere do arquivo na variavel "c" até o EOF (final do arquivo) 
+	printf("%c",c);
+
+- char *fgets
+- char *puts
+
+unsigned fread
+unsigned fwrite
+
+
+EXEMPLO:
+	char str[]= "matheus";
+	char str1[30];
+- sprintf(str1, "%s.txt" , str);
+// usado pra colocar o nome da pessoa no nome do arquivo.
+
+EXEMPLO:
+	strcpy(str1, str);
+	strcat(str1, ".txt");
+
