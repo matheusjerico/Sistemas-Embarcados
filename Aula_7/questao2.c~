@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <fcntl.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+#include <sys/types.h>
+#include <signal.h>
+	
+int main(){
+	int pid;
+	int fd[2];
+	char buffer_filho[100];
+	char buffer_pai[100];
+
+	pid=fork();
+
+	if(pid==0){
+	strcpy(buffer_filho, "FILHO: Pai, qual eh a verdadeira essencia da sabedoria?");
+    		if(write(fd[1], buffer_filho, sizeof(buffer_filho)) < 0)
+     		printf("Erro na abertura do pipe\n");
+    	else{
+   		if(read(fd[0], buffer_filho, sizeof(buffer_filho)) < 0)
+        	printf("Erro na abertura do pipe\n");
+     	else
+        printf("%s \n", buffer_filho);
+
+        sleep(1);
+
+	}
+	
+	sleep(3);
+	strcpy(buffer_filho,"FILHO: Mas até uma criança de três anos sabe disso!");
+		write(fd[1],buffer_filho, sizeof(buffer_filho));
+		read(fd[0], buffer_filho, sizeof(buffer_filho));
+		printf("%s\n", buffer_filho);
+		sleep(1);
+	}
+
+	else{
+		sleep(1);
+		strcpy(buffer_pai,"PAI: Não façais nada violento, praticai somente aquilo que é justo e equilibrado.");
+		write(fd[1],buffer_pai, sizeof(buffer_pai));
+		read(fd[0], buffer_pai, sizeof(buffer_pai));
+		printf("%s\n",buffer_pai);
+		
+		strcpy(buffer_pai,"PAI: Sim, mas é uma coisa difícil de ser praticada até mesmo por um velho como eu...");
+		write(fd[1],buffer_pai, sizeof(buffer_pai));
+		read(fd[0], buffer_pai, sizeof(buffer_pai));
+		printf("%s\n",buffer_pai);
+		sleep(1);
+}
+return 0;
+
+}
+			
+

@@ -1,0 +1,30 @@
+#include <stdio.h>	// Para a funcao printf()
+#include <fcntl.h>	// Para a funcao open()
+#include <unistd.h>	// Para a funcao close()
+#include <stdlib.h>	// Para a função exit()
+#include <string.h>
+
+int main (int argc, char *argv[]) {
+	
+	int fp;
+	char idade[8];
+	int i= strlen(argv[1]);
+	char nome[300];
+	char nome_programa[300];
+
+	strcpy(nome_programa, argv[1]);
+	strcat(nome_programa,".txt");
+	strcpy(nome,"Nome: ");
+	strcat(nome, argv[1]);
+	strcpy(idade,"Idade: ");
+	strcat(idade, argv[2]);
+	
+	fp = open (nome_programa, O_RDWR | O_CREAT, S_IRWXU);
+	write(fp,&nome,strlen(nome));
+	write(fp,"\n",1);
+	write(fp,&idade,strlen(idade));
+
+	close(fp);
+
+return 0;
+}

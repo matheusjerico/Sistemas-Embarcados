@@ -1,0 +1,31 @@
+Data: 28/03/2017
+
+1. Como se utiliza o comando 'ps' para:
+	(a) Mostrar todos os processos rodando na máquina?
+		ps aux
+	(b) Mostrar os processos de um usuário?
+		ps -a
+	(c) Ordenar todos os processos de acordo com o uso da CPU?
+		ps aux --sort -rss
+	(d) Mostrar a quanto tempo cada processo está rodando?
+
+2. De onde vem o nome fork()?
+		Forkar, fazer a copia do mesmo processo com outro valor de PID.
+
+3. Quais são as vantagens e desvantagens em utilizar:
+	(a) system()?
+		Função da biblioteca stdlib.h. 
+		Se o sheel nao puder ser executado ele retorna 127, se ocorrer erro ele retorna -1.
+		
+	(b) fork() e exec()?
+		Fork é uma duplicata do processo é criada - processo filho, processo pai e filho podem executar funções diferentes devido ao valor de PID ser diferente.
+
+4. É possível utilizar o exec() sem executar o fork() antes?
+		
+5. Quais são as características básicas das seguintes funções:
+	(a) execp()?
+	(b) execv()?
+	(c) exece()?
+	(d) execvp()?
+	(e) execve()?
+	(f) execle()?

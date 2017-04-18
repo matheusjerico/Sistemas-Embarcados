@@ -1,0 +1,2 @@
+Nome: Ricardo
+Idade: 42

@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <fcntl.h>	// Para a funcao open()
+#include "bib_arqs.h"
+
+void le_arq_texto(char *nome_arquivo, char *conteudo){
+	int fp;	
+	char ch;
+	int i=0;
+	fp= open(nome_arquivo, O_RDONLY | O_CREAT , S_IRWXU);
+	
+	if(fp==-1){
+	printf("ERRO");
+	exit(1);
+	}
+	
+	while(read(fp, &ch, sizeof(ch)) != 0){
+		conteudo[i] = ch;
+		i++;
+}
+	close(fp);
+	printf("O conteudo do arquivo é: %s\n", conteudo);
+}

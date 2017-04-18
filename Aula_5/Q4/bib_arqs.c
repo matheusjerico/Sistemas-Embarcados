@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <fcntl.h>	// Para a funcao open()
+#include "bib_arqs.h"
+
+int tam_arq_texto(char *nome_arquivo){
+	
+	int i=0;
+	int fp;
+	char ch;
+	fp= open(nome_arquivo,  O_RDONLY | O_CREAT , S_IRWXU);
+	
+	if(fp==-1){
+			printf("Erro na abertuda do arquivo");
+			exit(1);
+}
+	while(read(fp, &ch , 1) != 0)
+		i++;
+	close(fp);
+	return i;
+}
